@@ -1,0 +1,17 @@
+div#rumi {
+  font-size: 1.1em;  
+}
+ul#repos {
+  float: left;
+}
+ul#repos li {
+  list-style: none;
+}
+ul#repos li a {
+  font-size: 1.3em;
+  font-family: Didot, Skia, Monaco, Palatino, Book Antiqua, sans-serif;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+}
