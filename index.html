@@ -7,24 +7,52 @@
   </head>
 
   <body>
-    <div id="rumi">
-      <p>
-        There is nourishment like bread<br/>
-        that feeds one part of your life,<br/>
-        nourishment like light for another.
-      </p>
-      <p>
-        There are many rules about restraint<br/>
-        with the former, but only one rule<br/>
-        for the latter: <em>Never be satisfied.</em>
-      </p>
-      <p>
-        Eat and drink the soul substance</br>
-        as a wick does with the oil it soaks in.</br>
-        Give light to all.
-      </p>
-      <div class="author"> -- Rumi </div>
+    <div class="container">
+      <div id="rumi" class="span-6">
+        <p>
+          There is nourishment like bread<br/>
+          that feeds one part of your life,<br/>
+          nourishment like light for another.
+        </p>
+        <p>
+          There are many rules about restraint<br/>
+          with the former, but only one rule<br/>
+          for the latter: <em>Never be satisfied.</em>
+        </p>
+        <p>
+          Eat and drink the soul substance</br>
+          as a wick does with the oil it soaks in.</br>
+          Give light to all.
+        </p>
+        <div class="author"> -- Rumi </div>
+      </div>
+      <div id="repos" class="span-6">
+      </div>
     </div>
   </body>
+  <script language="javascript">
+    $(function() {
+      var limit = 15        // how many repos to list
+      var login = 'JackDanger' // your username
+      var exclude = {'jquery': true,
+                     'parenscript': true,
+                     'erlang-smtp': true,
+                     'pragprog_erlang_exercises': true,
+                     'syntaxhighlighter': true}
 
+      $.getJSON('http://github.com/api/v1/json/' + login + '?callback=?', function(data) {
+        var repos = $.grep(data.user.repositories, function(repo) {
+          return !repo.fork && !repo.private && !exclude[repo.name]
+        })
+
+        repos.sort(function(a, b) {
+          return b.watchers - a.watchers
+        })
+
+        $.each(repos.slice(0, limit), function() {
+          $('#repos').append('<li><a href="' + this.url + '">' + this.name + '</a></li>')
+        })
+      })        
+    })
+  </script>
 </html>
