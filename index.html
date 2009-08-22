@@ -41,6 +41,8 @@
                      'erlang-smtp': true,
                      'pragprog_erlang_exercises': true,
                      'dot-emacs': true,
+                     'iCalReader': true,
+                     'google-wave-samples': true,
                      'jackdanger.github.com': true,
                      'jackcanty.com': true,
                      'jackbash': true,
@@ -56,7 +58,7 @@
         })
 
         $.each(repos.slice(0, limit), function() {
-          $('#repos').append('<li><a href="' + this.url + '">' + this.name.replace('_', ' ') + '</a></li>')
+          $('#repos').append('<li><a href="' + this.url + '">' + this.name.replace(/_|-/g, ' ') + '</a></li>')
         })
       })        
     })
