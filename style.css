@@ -23,3 +23,12 @@ ul#repos li a {
   font-weight: bold;
   color: #333;
 }
+#youtube {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  font-size: 0.8em;
+}
+#youtube a {
+  color: #666;
+}
