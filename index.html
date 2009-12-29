@@ -36,20 +36,35 @@
   </body>
   <script language="javascript">
     $(function() {
-      var limit = 15        // how many repos to list
+      var limit = 35        // how many repos to list
       var login = 'JackDanger' // your username
-      var exclude = {'jquery': true,
-                     'jquery-ui': true,
-                     'parenscript': true,
-                     'erlang-smtp': true,
-                     'pragprog_erlang_exercises': true,
-                     'dot-emacs': true,
-                     'iCalReader': true,
-                     'google-wave-samples': true,
-                     'jackdanger.github.com': true,
-                     'jackcanty.com': true,
-                     'jackbash': true,
-                     'syntaxhighlighter': true}
+      var exclude = [
+        'wave',
+        'jquery',
+        'jquery-ui',
+        'parenscript',
+        'embeddedjs',
+        'chromiumos',
+        'google-wave-robot-python-client',
+        'google-wave-robot-java-client',
+        'yelp',
+        'love',
+        'jquery-geocodable',
+        'jackcanty.com-in-scheme',
+        'erlang-smtp',
+        'erlang-mysql-driver',
+        'pragprog_erlang_exercises',
+        'dot-emacs',
+        'iCalReader',
+        'google-wave-samples',
+        'jackdanger.github.com',
+        'jackcanty.com',
+        'jackbash',
+        'syntaxhighlighter'
+      ]
+      $.each(exclude, function(){
+        exclude[this] = true
+      })
 
       $.getJSON('http://github.com/api/v1/json/' + login + '?callback=?', function(data) {
         var repos = $.grep(data.user.repositories, function(repo) {
