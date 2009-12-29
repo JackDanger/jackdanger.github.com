@@ -9,15 +9,20 @@ body {
 div#rumi {
   font-size: 1.4em;
 }
+div#rumi p:first-letter{
+  font-size: 1.5em;
+  font-weight: bold;
+}
 ul#repos {
   float: left;
 }
 ul#repos li {
   list-style: none;
+  padding-bottom: 0.75em;
 }
 ul#repos li a {
-  font-size: 1.3em;
-  font-family: Didot, Skia, Monaco, Palatino, "Book Antiqua", sans-serif;
+  font-size: 1.5em;
+  font-family: titillium, Didot, Skia, Monaco, Palatino, "Book Antiqua", sans-serif;
   text-transform: capitalize;
   text-decoration: none;
   font-weight: bold;

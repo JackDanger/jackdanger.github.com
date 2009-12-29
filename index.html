@@ -5,24 +5,26 @@
     <link href="blueprint.css" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" language="javascript" src="cufon-yui.js"></script>
+    <script type="text/javascript" language="javascript" src="titillium_100-titillium_500.font.js"></script>
   </head>
   <body>
     <a href="http://github.com/JackDanger/"><img style="position: absolute; top: 0; left: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png" alt="Fork me on GitHub" /></a>  
     <div class="container">
       <div id="rumi" class="span-7">
         <p>
-          There is nourishment like bread<br/>
-          that feeds one part of your life,<br/>
+          There is nourishment like bread<br />
+          that feeds one part of your life,<br />
           nourishment like light for another.
         </p>
         <p>
-          There are many rules about restraint<br/>
-          with the former, but only one rule<br/>
+          There are many rules about restraint<br />
+          with the former, but only one rule<br />
           for the latter: <em>Never be satisfied.</em>
         </p>
         <p>
-          Eat and drink the soul substance</br>
-          as a wick does with the oil it soaks in.</br>
+          Eat and drink the soul substance<br />
+          as a wick does with the oil it soaks in.<br />
           Give light to all.
         </p>
         <div class="author"> -- Rumi </div>
@@ -78,7 +80,10 @@
         $.each(repos.slice(0, limit), function() {
           $('#repos').append('<li><a href="' + this.url + '">' + this.name.replace(/_|-/g, ' ') + '</a></li>')
         })
-      })        
+        Cufon.replace("#repos li a")
+		    Cufon.now();
+
+      })
     })
   </script>
 <script type="text/javascript">
