@@ -37,11 +37,12 @@
         <h2>Status: Building <a href="http://cloops.com/" title="Cloops Local Coupons">Cloops.com</a></h2>
         <h4>
           <a href="http://twitter.com/jackdanger" class="twitter-follow-button">Follow @jackdanger</a>
-          <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+          <script defer="true" src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
         </h4>
         <h2>
-          <span id="project_number"></spna>
-            Projects by Jack:
+          Jack's
+          <span id="project_number"></span>
+          Open Source Projects:
         </h2>
         <ul id="repos" class="tk-raleway">
         </ul>
@@ -53,10 +54,13 @@
   </body>
   <script language="javascript">
     $(function() {
-      var limit = 35        // how many repos to list
+      var limit = 100        // how many repos to list
       var login = 'JackDanger' // your username
       var exclude = [
         'wave',
+        'arduino_tutorials',
+        'amazon_presentation',
+        'decent_email',
         'jquery',
         'jquery-ui',
         'parenscript',
@@ -92,9 +96,10 @@
           return b.watchers - a.watchers
         })
 
-        $.each(repos.slice(0, limit), function() {
+        $.each(repos, function() {
           $('#repos').append('<li><a href="' + this.url + '">' + this.name.replace(/_|-/g, ' ') + '</a></li>')
         })
+        $("#project_number").text(repos.length)
       })
     })
   </script>
