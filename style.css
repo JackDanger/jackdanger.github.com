@@ -19,7 +19,10 @@ ul#repos {
 }
 ul#repos li {
   list-style: none;
+  float: left;
   padding-bottom: 0.75em;
+  margin-right: 10px;
+  width: 160px;
 }
 ul#repos li a {
   /* font-family: Monaco, Palatino, "Book Antiqua", sans-serif; */
@@ -32,7 +35,7 @@ ul#repos li a {
   border-radius: 7px;
   border: 2px solid #CCC;
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 15px;
   text-transform: capitalize; 
   color: #333;
 }
