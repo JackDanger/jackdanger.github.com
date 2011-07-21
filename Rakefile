@@ -28,7 +28,7 @@ task :new do
 ---
 layout: post
 title: #{postname}
-permalink: #{slug}.html
+permalink: write/#{slug}.html
 published: false
 author: Jack Danger Canty
 author_url: http://jackcanty.com
