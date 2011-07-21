@@ -36,7 +36,7 @@ author_url: http://jackcanty.com
 
 EOS
   end
-  system "vim #{post}"
+  system "mvim #{post}"
 end
 
 def entries
