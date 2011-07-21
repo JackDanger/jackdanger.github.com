@@ -1,0 +1,28 @@
+<h1 id='narcissistic_software'>Narcissistic Software</h1>
+
+<p>The other day a sweet, blue-haired old lady was sharing her stories with me. &#8220;And my cousin Veronica, y&#8217;know, she had that condition for years. And her son, Bryan, after that horrible accident, was just never the same&#8221;. I&#8217;ve never heard of Veronica or her son before. Nor do I know what condition Veronica suffered or what became of her boy.</p>
+
+<p>This lady, sweetheart though she is, was demonstrating narcissism as she told the story. Narcissism, in the technical sense, is a failure to distinguish that one&#8217;s reality is subjective and that other people have experiences distinct form yours even in the same culture, company, and family. She had an internal understanding of the world that included her memories, her relationships, and her judgements and she (temporarily) forgot that my experience of the world is different from hers. I don&#8217;t know those people. I know other people that she doesn&#8217;t know. If we&#8217;re to have a conversation we have to talk about people we both know. Or one of us can tell a story that introduces a new character but we have to give extra information so that we both know enough for the story to make sense.</p>
+
+<p>Narcissistic software doesn&#8217;t sanely relate to other software. It assumes that other services, clients, and libraries understand it&#8217;s own internals. It doesn&#8217;t know how much of itself is or should be accessible to other software. And it can&#8217;t comprehend what experience other software will have relating to it.</p>
+
+<h2 id='confusing_the_view_from_inside_with_the_view_from_outside'>Confusing the View from Inside with the View from Outside</h2>
+
+<p>All software has some portion of itself that&#8217;s accessible from the outside and some other part that isn&#8217;t. The externally-visible part is considered the &#8216;interface&#8217; even if the distinction between the parts is unintentional. The inside part may use languages and patterns that make sense within the domain of the software but are not appropriate elsewhere. Here&#8217;s an unintentional interface that fully exposes the internals of an application for external use:</p>
+
+<pre><code>&lt;form action=&#39;/app.php&#39;&gt;
+  &lt;input type=hidden name=&#39;sql&#39; value=&#39;update users set updated_at = NOW() where id = 6&#39; /&gt;
+  &lt;input type=submit value=&#39;Update Account&#39; /&gt;
+&lt;/form&gt;</code></pre>
+
+<p>The obvious problem with this is that a visitor will delete the app&#8217;s database just for fun. But the real design problem is that the interface is narcissistic. This application can&#8217;t distinguish it&#8217;s insides from it&#8217;s outsides and expects that other software will speak the same languages as it does internally. Any software that doesn&#8217;t speak SQL can&#8217;t relate to this app. Any software that does speak SQL will relate to this app in unexpected (and tragic) ways.</p>
+
+<h2 id='having_expectations_versus_explaining_clearly'>Having Expectations Versus Explaining Clearly</h2>
+
+<p>But many interfaces properly separate internals from visible externals. These interfaces are finite, well-organized, and complete in that they offer a full set of features so you can write software that uses them. They may even have good security, unlike the example above. These good interfaces are still narcissistic if they don&#8217;t properly explain themselves.</p>
+
+<p>One of the symptoms of <a href='http://en.wikipedia.org/wiki/Narcissistic_personality_disorder#cite_ref-DSM-IV-TR_0-1'>Narcissistic Personality Disorder</a> is patients expect other people to implicitly understand the patient&#8217;s needs and abilities without being told. Healthy people make clear requests of others and share their experiences in terms that other people can relate to. Narcissists just have unvoiced expectations of other people (that usually go unmet).</p>
+
+<p>Without good documentation an interface (even a well-written one) is narcissistic. And I mean good documentation. That&#8217;s README&#8217;s, screencasts, tutorials, and books. Automated docs are worthless. They don&#8217;t distinguish important parts of code from unimportant ones. They don&#8217;t distinguish commonly-used functions from rare cases. They don&#8217;t give you examples of usage and common mistakes. They just prettify the software implementation that is inherently internal. Man pages are (nearly) as bad. Very few man pages teach someone how to use a program, they only list the possible options one can give grouped by type. There&#8217;s no mention of common use cases or gotchas. This is like if someone asked you to describe yourself and you listed everything you&#8217;d ever done. &#8220;Was born, ate pizza 853 times, have bachelor&#8217;s in biology, etc.&#8221; It&#8217;s useless. You need the person to imagine what you care about (maybe they have to ask) and form an answer that meets your needs succinctly.</p>
+
+<p>If the software you&#8217;re writing is worth using then it&#8217;s worth giving it a sane interface. The externally-accessible parts shouldn&#8217;t be tied to it&#8217;s internal structure and it should have clear, human-written documentation about how it should be used based on your best guesses of how it will actually be used. The internet is not a network of computers, it&#8217;s a festival of relational applications. Our code only gets invited to the party if we teach it to relate well to it&#8217;s peers.</p>
