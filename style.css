@@ -29,6 +29,11 @@ div.sitelink a {
   display: block;
 }
 
+/* Headers */
+h1,h2,h3,h4,h5,h6 {
+  color: #AAA;
+}
+
 
 /* Home Page */
 ul.writing {
