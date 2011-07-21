@@ -7,6 +7,8 @@ author: Jack Danger Canty
 author_url: http//jackcanty.com
 ---
 
+A narcissist lacks empathy; is unwilling to recognize or identify with the feelings and needs of others.
+
 # Narcissistic Software
 
 The other day a sweet, blue-haired old lady was sharing her stories with me. "And my cousin Veronica, y'know, she had that condition for years. And her son, Bryan, after that horrible accident, was just never the same". I've never heard of Veronica or her son before. Nor do I know what condition Veronica suffered or what became of her boy.
