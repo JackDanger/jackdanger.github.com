@@ -1,13 +1,38 @@
 @font-face {
-font-family: "Linux Libertine";
-src: url("lin-libertine-min.eot");
-src: local("Linux Libertine"),url("lin-libertine-min.ttf")
+  font-family: "Linux Libertine";
+  src: url("lin-libertine-min.eot");
+  src: local("Linux Libertine"),url("lin-libertine-min.ttf")
 }
 body {
   font-family: "Linux Libertine",Gentium,"Book Antiqua",Cambria,Palatino,Georgia,"Times New Roman",serif;
 }
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+#header {
+  line-height: 25px;
+}
+img.icon {
+  float: left;
+  height: 16px;
+  width: 16px;
+}
+div.sitelink {
+  padding: 0 0 0 23px;
+}
+div.sitelink a {
+  display: block;
+}
+
+
+/* Home Page */
 div#rumi {
-  font-size: 1.4em;
+  font-size: 1.1em;
 }
 div#rumi p:first-letter{
   font-size: 1.5em;
@@ -16,13 +41,14 @@ div#rumi p:first-letter{
 ul#repos {
   float: left;
   margin: 0;
+  padding: 0;
 }
 ul#repos li {
   list-style: none;
   float: left;
   padding-bottom: 0.75em;
   margin-right: 10px;
-  width: 160px;
+  width: 180px;
 }
 ul#repos li a {
   /* font-family: Monaco, Palatino, "Book Antiqua", sans-serif; */
@@ -34,7 +60,7 @@ ul#repos li a {
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
   border-radius: 7px;
-  border: 2px solid #CCC;
+  border: 1px solid #CCC;
   text-decoration: none;
   font-size: 18px;
   text-transform: capitalize; 
