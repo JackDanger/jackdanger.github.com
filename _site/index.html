@@ -4,9 +4,9 @@
     <link rel="openid.delegate" href="http://jackdanger.myopenid.com/"> 
     <link href="blueprint.css" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://use.typekit.com/jdn6stu.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript"></script>
-    <script type="text/javascript" language="javascript" src="cufon-yui.js"></script>
-    <script type="text/javascript" language="javascript" src="titillium_100-titillium_500.font.js"></script>
   </head>
   <body>
     <a href="http://github.com/JackDanger/"><img style="position: absolute; top: 0; left: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png" alt="Fork me on GitHub" /></a>  
@@ -31,12 +31,20 @@
         <br>
         <br>
         <br>
-        <script src="http://cloops.local/locations.js"></script>
+        <script src="http://cloops.com/locations.js"></script>
       </div>
       <div class="span-8">
         <h2>Status: Building <a href="http://cloops.com/" title="Cloops Local Coupons">Cloops.com</a></h2>
-        <h2>Other Projects:</h2>
-        <ul id="repos">
+        <h4>
+          <a href="http://twitter.com/jackdanger" class="twitter-follow-button">Follow @jackdanger</a>
+          <script defer="true" src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+        </h4>
+        <h2>
+          Jack's
+          <span id="project_number"></span>
+          Open Source Projects:
+        </h2>
+        <ul id="repos" class="tk-raleway">
         </ul>
       </div>
     </div>
@@ -46,10 +54,13 @@
   </body>
   <script language="javascript">
     $(function() {
-      var limit = 35        // how many repos to list
+      var limit = 100        // how many repos to list
       var login = 'JackDanger' // your username
       var exclude = [
         'wave',
+        'arduino_tutorials',
+        'amazon_presentation',
+        'decent_email',
         'jquery',
         'jquery-ui',
         'parenscript',
@@ -85,12 +96,10 @@
           return b.watchers - a.watchers
         })
 
-        $.each(repos.slice(0, limit), function() {
+        $.each(repos, function() {
           $('#repos').append('<li><a href="' + this.url + '">' + this.name.replace(/_|-/g, ' ') + '</a></li>')
         })
-        Cufon.replace("#repos li a")
-		    Cufon.now();
-
+        $("#project_number").text(repos.length)
       })
     })
   </script>

@@ -15,23 +15,35 @@ div#rumi p:first-letter{
 }
 ul#repos {
   float: left;
+  margin: 0;
 }
 ul#repos li {
   list-style: none;
+  float: left;
   padding-bottom: 0.75em;
+  margin-right: 10px;
+  width: 160px;
 }
 ul#repos li a {
-  font-size: 1.5em;
-  font-family: titillium, Didot, Skia, Monaco, Palatino, "Book Antiqua", sans-serif;
-  text-transform: capitalize;
+  /* font-family: Monaco, Palatino, "Book Antiqua", sans-serif; */
+  font-family: "raleway-1","raleway-2",sans-serif;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#EEA)) 30;
+  background: -moz-linear-gradient(top, #EEC, #DDA 50%, #DDA 50%, #DDA 100%);
+  display: block;
+  padding: 5px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  border: 2px solid #CCC;
   text-decoration: none;
-  font-weight: bold;
+  font-size: 18px;
+  text-transform: capitalize; 
   color: #333;
 }
 #youtube {
   position: absolute;
   right: 1em;
-  bottom: 1em;
+  bottom: 3em;
   font-size: 0.8em;
 }
 #youtube a {
