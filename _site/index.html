@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <link rel="openid.server" href="http://www.myopenid.com/server/">
+    <link rel="openid.delegate" href="http://jackdanger.myopenid.com/"> 
+    <link href="blueprint.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" language="javascript" src="cufon-yui.js"></script>
+    <script type="text/javascript" language="javascript" src="titillium_100-titillium_500.font.js"></script>
+  </head>
+  <body>
+    <a href="http://github.com/JackDanger/"><img style="position: absolute; top: 0; left: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png" alt="Fork me on GitHub" /></a>  
+    <div class="container">
+      <div id="rumi" class="span-7">
+        <p>
+          There is nourishment like bread<br />
+          that feeds one part of your life,<br />
+          nourishment like light for another.
+        </p>
+        <p>
+          There are many rules about restraint<br />
+          with the former, but only one rule<br />
+          for the latter: <em>Never be satisfied.</em>
+        </p>
+        <p>
+          Eat and drink the soul substance<br />
+          as a wick does with the oil it soaks in.<br />
+          Give light to all.
+        </p>
+        <div class="author"> -- Rumi </div>
+        <br>
+        <br>
+        <br>
+        <script src="http://cloops.local/locations.js"></script>
+      </div>
+      <div class="span-8">
+        <h2>Status: Building <a href="http://cloops.com/" title="Cloops Local Coupons">Cloops.com</a></h2>
+        <h2>Other Projects:</h2>
+        <ul id="repos">
+        </ul>
+      </div>
+    </div>
+  <div id='youtube'>
+    <a href="http://www.youtube.com/watch?v=ueaHLHgskkw">yes, yes it is.</a>
+  </div>
+  </body>
+  <script language="javascript">
+    $(function() {
+      var limit = 35        // how many repos to list
+      var login = 'JackDanger' // your username
+      var exclude = [
+        'wave',
+        'jquery',
+        'jquery-ui',
+        'parenscript',
+        'embeddedjs',
+        'chromiumos',
+        'google-wave-robot-python-client',
+        'google-wave-robot-java-client',
+        'yelp',
+        'love',
+        'jquery-geocodable',
+        'jackcanty.com-in-scheme',
+        'erlang-smtp',
+        'erlang-mysql-driver',
+        'pragprog_erlang_exercises',
+        'dot-emacs',
+        'iCalReader',
+        'google-wave-samples',
+        'jackdanger.github.com',
+        'jackcanty.com',
+        'jackbash',
+        'syntaxhighlighter'
+      ]
+      $.each(exclude, function(){
+        exclude[this] = true
+      })
+
+      $.getJSON('http://github.com/api/v1/json/' + login + '?callback=?', function(data) {
+        var repos = $.grep(data.user.repositories, function(repo) {
+          return !repo.fork && !repo.private && !exclude[repo.name]
+        })
+
+        repos.sort(function(a, b) {
+          return b.watchers - a.watchers
+        })
+
+        $.each(repos.slice(0, limit), function() {
+          $('#repos').append('<li><a href="' + this.url + '">' + this.name.replace(/_|-/g, ' ') + '</a></li>')
+        })
+        Cufon.replace("#repos li a")
+		    Cufon.now();
+
+      })
+    })
+  </script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-331450-11");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</html>

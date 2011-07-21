@@ -1,0 +1,39 @@
+@font-face {
+font-family: "Linux Libertine";
+src: url("lin-libertine-min.eot");
+src: local("Linux Libertine"),url("lin-libertine-min.ttf")
+}
+body {
+  font-family: "Linux Libertine",Gentium,"Book Antiqua",Cambria,Palatino,Georgia,"Times New Roman",serif;
+}
+div#rumi {
+  font-size: 1.4em;
+}
+div#rumi p:first-letter{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+ul#repos {
+  float: left;
+}
+ul#repos li {
+  list-style: none;
+  padding-bottom: 0.75em;
+}
+ul#repos li a {
+  font-size: 1.5em;
+  font-family: titillium, Didot, Skia, Monaco, Palatino, "Book Antiqua", sans-serif;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+}
+#youtube {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  font-size: 0.8em;
+}
+#youtube a {
+  color: #666;
+}
