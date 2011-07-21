@@ -8,14 +8,9 @@ layout: default
 <div id="comments">
   <div id="disqus_thread"></div>
   <script type="text/javascript">
-      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-      var disqus_shortname = 'jackcanty'; // required: replace example with your forum shortname
-
-      // The following are highly recommended additional parameters. Remove the slashes in front to use.
-      var disqus_identifier = {{ post.permalink }};
-      var disqus_url = window.location.href;
-
-      /* * * DON'T EDIT BELOW THIS LINE * * */
+      var disqus_shortname = 'jackcanty'
+      var disqus_identifier = '{{ post.permalink }}'
+      var disqus_url = window.location.href
       (function() {
           var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
