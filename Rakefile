@@ -22,7 +22,7 @@ task :new do
   postname = ENV['P']
   date     = Date.today + ENV['YET'].to_i
   slug = postname.gsub(/[^a-z0-9\-_\+]+/i, '-').downcase.chomp("-")
-  post = "#{ROOT}/_posts/#{date.to_s}-#{slug}.textile"
+  post = "#{ROOT}/_posts/#{date.to_s}-#{slug}.markdown"
   File.open(post, 'w') do |f|
     f.write <<-EOS
 ---
