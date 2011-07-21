@@ -31,6 +31,15 @@ div.sitelink a {
 
 
 /* Home Page */
+ul.writing {
+  padding: 0;
+  margin: 0;
+}
+ul.writing li {
+  list-style: none;
+  margin-left: 40px;
+  font-size: 22px;
+}
 div#rumi {
   font-size: 1.1em;
 }
