@@ -22,17 +22,19 @@ Narcissistic software doesn't sanely relate to other software. It doesn't know t
 ## Exposing internals inappropriately
 
 One way for an interface to be narcissistic is for it to expose it's internal workings in an unhelpful or even dangerous way.
-Here's an unintentional interface that fully exposes the internals of an application for external use:
-[Hm: It's a hidden input, so it doesn't "fully" expose the internals. It's not exactly clear if this is something you found in a real app, or something you made up as an example (I'm presuming the latter). If it's hypothetical, why not make it a text field, so the internal language is then directly exposed to the user? I'm not sure why this interface is an "unintentional interface": There is clearly intention to have some kind of interface here. Perhaps a smoother wording would be: Here's a hypothetical interface that unintentionally exposes the application's internal language. Then again, if it is all hypothetical, it's all intentionally crafted... In any event, I think this example needs more set up.]
-   <form action='/app.php'>
-     <input type=text name='sql' value='update users set updated_at = NOW() where id = 6' />
-     <input type=submit value='Update Account' />
-   </form>
 
-The obvious problem with this is that a visitor, with a slight modification, could delete the app's database just for fun. But the real design problem is that the interface is narcissistic. This application doesn't distinguish it's insides from it's outsides and expects that other software [but isn't the "other" in this case, a user, not software?] will speak the same languages as it does internally. Any software that doesn't speak SQL can't relate to this app. Any software that does speak SQL will relate to this app in unexpected (and tragic) ways.
-[But isn't this form mainly talking to it's own backend? or is the backend the "other" software in this case?]
+See if you can find a problem with this (contrived) narcissistic interface:
+
+    http://example.com/list_users?sql="select * from users;"
+
+Okay, so problem #1 is that some joker at a computer will edit this url to read sql="drop table users;" and destroy the data. But that security problem is really just indicative of the larger issue that the inside and outside of this app have been confused with each other.
+
+This user-listing service assumes that, because it uses SQL internally, SQL is an appropriate language for the outside world as well. But what works inside this application is a poor fit for outside.
+
 
 ## Having Expectations Versus Explaining Clearly
+
+My therapist once told me that "children have expectations but adults make requests." This includes adults who have the emotional maturity of children. A child knows it has a need and, if they are at a stage of age-appropriate narcissism, they will expect that other people intuitively understand this need. Part of becoming an adult is learning to communicate needs and expectations clearly in terms that other people can comprehend. Please don't ask my wife how slowly I'm learning this lesson.
 
 But many interfaces properly separate internals from visible externals. These interfaces are finite, well-organized, and complete in that they offer a full set of features so you can write software that uses them. They may even have good security, unlike the example above. These good interfaces are still narcissistic if they don't properly explain themselves.
 
