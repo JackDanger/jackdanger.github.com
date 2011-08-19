@@ -1,24 +1,11 @@
----
-layout: post
-title: Narcissistic Software
-permalink: write/narcissistic-software.html
-published: true
-author: Jack Danger Canty
-author_url: http//jackcanty.com
----
-
-Software, at every level, interacts with other software. The part of your software that other software tries to connect to is your code's "interface", whether you meant to build an interface or not. And the way two pieces of software relate to each other across this interface can be modeled fairly well using existing models of human relationships.
-
-One relational model, 
-
 A narcissist lacks empathy; is unwilling to recognize or identify with the feelings and needs of others.
 
 # Narcissistic Software
 
-The other day a sweet, blue-haired old lady was sharing her stories with me. "And my cousin Veronica, y'know, she had that condition for years. And her son, Bryan, after that horrible accident, was just never the same". I've never heard of Veronica or her son before. I don't know what condition Veronica suffered, nor what Bryan was like before (or after) the mysterious accident.
+The other day a sweet, blue-haired old lady was sharing her stories with me. "And my cousin Veronica, y'know, she had that condition for years. And her son, Bryan, after that horrible accident, was just never the same". I've never heard of Veronica or her son before. Nor do I know what condition Veronica suffered or what became of her boy.
 
 This lady, sweetheart though she is, was demonstrating narcissism as she told the story. Narcissism, in the technical sense, is a failure to distinguish that one's reality is subjective and that other people have experiences distinct form yours even in the same culture, company, and family.
-She had an internal understanding of the world that included her memories, her relationships, and her judgements and she (temporarily) forgot that my experience of the world is different from hers. I don't know those people in the story. I know other people that she doesn't know. If we're to have a conversation we have to talk about people we both know. Or one of us can tell a story that introduces a new character but we have to give extra information so that we both know enough for the story to make sense.
+She had an internal understanding of the world that included her memories, her relationships, and her judgements and she (temporarily) forgot that my experience of the world is different from hers. I don't know those people. I know other people that she doesn't know. If we're to have a conversation we have to talk about people we both know. Or one of us can tell a story that introduces a new character but we have to give extra information so that we both know enough for the story to make sense.
 
 Narcissistic software doesn't sanely relate to other software. It assumes that other services, clients, and libraries understand it's own internals. It doesn't know how much of itself is or should be accessible to other software. And it can't comprehend what experience other software will have relating to it.
 
@@ -43,3 +30,4 @@ Without good documentation an interface (even a well-written one) is narcissisti
 This is like if someone asked you to describe yourself and you listed everything you'd ever done. "Was born, ate pizza 853 times, have bachelor's in biology, etc." It's useless. You need the person to imagine what you care about (maybe they have to ask) and form an answer that meets your needs succinctly.
 
 If the software you're writing is worth using then it's worth giving it a sane interface. The externally-accessible parts shouldn't be tied to it's internal structure and it should have clear, human-written documentation about how it should be used based on your best guesses of how it will actually be used. The internet is not a network of computers, it's a festival of relational applications. Our code only gets invited to the party if we teach it to relate well to it's peers.
+
