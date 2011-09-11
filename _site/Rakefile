@@ -28,7 +28,7 @@ task :new do
 ---
 layout: post
 title: #{postname}
-permalink: #{slug}.html
+permalink: write/#{slug}.html
 published: false
 author: Jack Danger Canty
 author_url: http://jackcanty.com
@@ -36,7 +36,7 @@ author_url: http://jackcanty.com
 
 EOS
   end
-  system "vim #{post}"
+  system "mvim #{post}"
 end
 
 def entries

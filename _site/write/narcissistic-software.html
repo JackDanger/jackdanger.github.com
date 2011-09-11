@@ -39,34 +39,59 @@
 
     <div class="row">
   <div id="post" class="column grid_9">
-    <p>A narcissist lacks empathy; is unwilling to recognize or identify with the feelings and needs of others.</p>
+    <p>All software has an inside and an outside. The inside is where the software makes decisions about what it&#8217;s supposed to do. The outside is what we call the &#8220;interface&#8221; and it&#8217;s how you interact with the software &#8212; whether &#8220;you&#8221; is a person sitting at a keyboard or another piece of software. For the rest of this document I&#8217;ll be using &#8220;interface&#8221; to describe all kinds of software outsides whether they&#8217;re web pages, service APIs, internal APIs, etc.</p>
+
+<p>If software connects to something outside itself then software is at least a little bit like people. If it relates then it can suffer from relational disorders. An interface can be unreliable, it can be slow, it can be too verbose, etc. I&#8217;m going to model a specific type of software interface disorder and use a human psychological model for it.</p>
+
+<blockquote>
+<p>Narcissistic Personality Disorder A narcissist lacks empathy; is unwilling to recognize or identify with the feelings and needs of others.</p>
+</blockquote>
 
 <h1 id='narcissistic_software'>Narcissistic Software</h1>
 
-<p>The other day a sweet, blue-haired old lady was sharing her stories with me. &#8220;And my cousin Veronica, y&#8217;know, she had that condition for years. And her son, Bryan, after that horrible accident, was just never the same&#8221;. I&#8217;ve never heard of Veronica or her son before. Nor do I know what condition Veronica suffered or what became of her boy.</p>
+<p>The other day a sweet, blue-haired old lady was sharing her stories with me. &#8220;And my cousin Veronica, y&#8217;know, she had that condition for years. And her son, Bryan, after that horrible accident, was just never the same&#8221;. Now, I love this particular elderly lady but I&#8217;ve never heard of Veronica or her son before. And I don&#8217;t know what condition Veronica suffered, nor what Bryan was like before (or after) this mysterious accident.</p>
 
-<p>This lady, sweetheart though she is, was demonstrating narcissism as she told the story. Narcissism, in the technical sense, is a failure to distinguish that one&#8217;s reality is subjective and that other people have experiences distinct form yours even in the same culture, company, and family. She had an internal understanding of the world that included her memories, her relationships, and her judgements and she (temporarily) forgot that my experience of the world is different from hers. I don&#8217;t know those people. I know other people that she doesn&#8217;t know. If we&#8217;re to have a conversation we have to talk about people we both know. Or one of us can tell a story that introduces a new character but we have to give extra information so that we both know enough for the story to make sense.</p>
+<p>This lady, sweetheart though she is, was demonstrating narcissism as she told the story. Narcissism, in the technical sense, is a failure to distinguish that one&#8217;s reality is subjective and that other people have experiences distinct from yours even in the same culture, company, and family. She had an internal understanding of the world that included her memories, her relationships, and her judgements and she (temporarily) forgot that my experience of the world is different from hers. I don&#8217;t know those people in the story. I know other people that she doesn&#8217;t know. If we&#8217;re to have a conversation we have to talk about people we both know. Or one of us can tell a story that introduces a new character but we have to give extra information so that we both know enough for the story to make sense.</p>
 
-<p>Narcissistic software doesn&#8217;t sanely relate to other software. It assumes that other services, clients, and libraries understand it&#8217;s own internals. It doesn&#8217;t know how much of itself is or should be accessible to other software. And it can&#8217;t comprehend what experience other software will have relating to it.</p>
+<p>Narcissism is not gazing longing at your own visage in the mirror. That may be the origin of the term from a Greek myth but it&#8217;s used very differently in modern psychology. To get a better feel for Narcissism just imagine a 4-year-old kid jumping into a swimming pool saying &#8220;Hey, watch what I can do!&#8221; but nobody ever pays attention. Then picture that kid all grown up and still looking for that same &#8220;Hey, look at me!&#8221; validation of their self and their worldview from everyone they meet. Their constant focus on self and their own inner reality prevents them from growing the psychological muscles necessary to imagine other people&#8217;s distinct inner selves.</p>
 
-<h2 id='confusing_the_view_from_inside_with_the_view_from_outside'>Confusing the View from Inside with the View from Outside</h2>
+<p>Interesting note: Narcissistic Personality Disorder is very common in America but psychologists in other cultures frequently report never having encountered a single case. Other cultures often generate totally different disorders.</p>
 
-<p>All software has some portion of itself that&#8217;s accessible from the outside and some other part that isn&#8217;t. The externally-visible part is considered the &#8216;interface&#8217; even if the distinction between the parts is unintentional. The inside part may use languages and patterns that make sense within the domain of the software but are not appropriate elsewhere. Here&#8217;s an unintentional interface that fully exposes the internals of an application for external use:</p>
+<p>Okay, let&#8217;s switch gears and apply that human model to software interfaces.</p>
 
-<pre><code>&lt;form action=&#39;/app.php&#39;&gt;
-  &lt;input type=hidden name=&#39;sql&#39; value=&#39;update users set updated_at = NOW() where id = 6&#39; /&gt;
-  &lt;input type=submit value=&#39;Update Account&#39; /&gt;
-&lt;/form&gt;</code></pre>
+<p>Narcissistic software doesn&#8217;t sanely relate to other software. It doesn&#8217;t know the difference between its inside and its outside. It doesn&#8217;t have a grasp of how other services, clients, libraries and people experience it from the outside. More specifically: The software author did not give sufficient thought to how it will be used.</p>
 
-<p>The obvious problem with this is that a visitor will delete the app&#8217;s database just for fun. But the real design problem is that the interface is narcissistic. This application can&#8217;t distinguish it&#8217;s insides from it&#8217;s outsides and expects that other software will speak the same languages as it does internally. Any software that doesn&#8217;t speak SQL can&#8217;t relate to this app. Any software that does speak SQL will relate to this app in unexpected (and tragic) ways.</p>
+<h2 id='exposing_internals_inappropriately_tightly_coupled_services'>Exposing internals inappropriately (tightly coupled services)</h2>
+
+<p>One way for an interface to be narcissistic is for it to expose it&#8217;s internal workings in an unhelpful or even dangerous way.</p>
+
+<p>See if you can find a problem with this (contrived) narcissistic interface:</p>
+
+<pre><code>http://example.com/run?sql=&quot;select * from users;&quot;</code></pre>
+
+<p>Okay, so problem #1 is that some joker at a computer will edit this url to read sql=&#8221;drop table users;&#8221; and destroy the data. But that security problem is really just indicative of the larger issue that the inside and outside of this app have been confused with each other.</p>
+
+<p>This user-listing service assumes that, because it uses SQL internally, SQL is an appropriate language for the outside world as well. But what works inside this application is a poor fit for outside. If this application were capable of understanding how it would be used it would look like this:</p>
+
+<pre><code>http://example.com/list_users</code></pre>
+
+<p>This would lighten the burden of anything using this interface and would prevent wholesale slaughter of data.</p>
 
 <h2 id='having_expectations_versus_explaining_clearly'>Having Expectations Versus Explaining Clearly</h2>
 
-<p>But many interfaces properly separate internals from visible externals. These interfaces are finite, well-organized, and complete in that they offer a full set of features so you can write software that uses them. They may even have good security, unlike the example above. These good interfaces are still narcissistic if they don&#8217;t properly explain themselves.</p>
+<p>My therapist once told me that &#8220;children have expectations but adults make requests.&#8221; This includes adults who have the emotional maturity of children. A child knows it has a need and, if they are at a stage of age-appropriate <a href='http://en.wikipedia.org/wiki/Narcissistic_personality_disorder#cite_ref-DSM-IV-TR_0-1'>narcissism</a>, they will expect that other people intuitively understand this need. Part of becoming an adult is shedding this expectation and learning to communicate needs and expectations clearly in terms that other people can comprehend. Please don&#8217;t ask my wife how slowly I&#8217;m learning this lesson.</p>
 
-<p>One of the symptoms of <a href='http://en.wikipedia.org/wiki/Narcissistic_personality_disorder#cite_ref-DSM-IV-TR_0-1'>Narcissistic Personality Disorder</a> is patients expect other people to implicitly understand the patient&#8217;s needs and abilities without being told. Healthy people make clear requests of others and share their experiences in terms that other people can relate to. Narcissists just have unvoiced expectations of other people (that usually go unmet).</p>
+<p>Again, this applies well to software. I don&#8217;t even have to contrive an example for this because it&#8217;s so common.</p>
 
-<p>Without good documentation an interface (even a well-written one) is narcissistic. And I mean good documentation. That&#8217;s README&#8217;s, screencasts, tutorials, and books. Automated docs are worthless. They don&#8217;t distinguish important parts of code from unimportant ones. They don&#8217;t distinguish commonly-used functions from rare cases. They don&#8217;t give you examples of usage and common mistakes. They just prettify the software implementation that is inherently internal. Man pages are (nearly) as bad. Very few man pages teach someone how to use a program, they only list the possible options one can give grouped by type. There&#8217;s no mention of common use cases or gotchas. This is like if someone asked you to describe yourself and you listed everything you&#8217;d ever done. &#8220;Was born, ate pizza 853 times, have bachelor&#8217;s in biology, etc.&#8221; It&#8217;s useless. You need the person to imagine what you care about (maybe they have to ask) and form an answer that meets your needs succinctly.</p>
+<p>Without good documentation, an interface (even a well-written, secure one) is narcissistic. And I mean <em>good</em> documentation. That&#8217;s README&#8217;s, tutorials, screencasts, and books, in that order. Automated docs are worthless. They don&#8217;t distinguish important parts of code from unimportant ones. They don&#8217;t distinguish commonly-used functions from rare cases. They don&#8217;t give you examples of usage and common mistakes. They just prettify the software implementation that is inherently internal.</p>
+
+<p>Unix man pages are even worse. Very few man pages teach someone how to use a program, they only list the possible options one can give grouped by type. There&#8217;s no mention of common use cases or gotchas. They feel most like a usage reference for the developer of the program than an actual manual. Man pages are like if someone asked you to describe yourself and you responded by listing everything you&#8217;d ever done. &#8220;Was born, ate pizza 853 times, have bachelor&#8217;s in biology, &#8230;&#8221; It&#8217;s useless. To learn about a person (or a piece of software) for the very first time you need the person/software to imagine what you care about (maybe they have to ask) and form an answer that meets your needs succinctly.</p>
+
+<blockquote>
+<p>If you disagree with me about man pages being awful, I dare you to adjust your hard drive with the <code>dd</code> command using only the man page for help.</p>
+</blockquote>
+
+<p>A narcissist knows if they like something but they&#8217;re unable and unwilling to figure out if you like it to. They can tell what they&#8217;re interested in but don&#8217;t know if you feel the same. To avoid narcissism in your software, write it with a good understanding of expected usage.</p>
 
 <p>If the software you&#8217;re writing is worth using then it&#8217;s worth giving it a sane interface. The externally-accessible parts shouldn&#8217;t be tied to it&#8217;s internal structure and it should have clear, human-written documentation about how it should be used based on your best guesses of how it will actually be used. The internet is not a network of computers, it&#8217;s a festival of relational applications. Our code only gets invited to the party if we teach it to relate well to it&#8217;s peers.</p>
   </div>
