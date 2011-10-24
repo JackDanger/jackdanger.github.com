@@ -21,12 +21,24 @@ img.icon {
   float: left;
   height: 16px;
   width: 16px;
+  padding-top: 3px;
+}
+
+img.inline-icon {
+  height: 16px;
+  width: 16px;
+  vertical-align: text-top;
 }
 div.sitelink {
   padding: 0 0 0 23px;
 }
 div.sitelink a {
   display: block;
+}
+
+a#square {
+  color: #333;
+  font-family: sans-serif;
 }
 
 /* Headers */

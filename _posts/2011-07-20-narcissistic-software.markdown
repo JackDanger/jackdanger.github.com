@@ -2,7 +2,7 @@
 layout: post
 title: Narcissistic Software
 permalink: write/narcissistic-software.html
-published: true
+published: false
 author: Jack Danger Canty
 author_url: http//jackcanty.com
 ---
