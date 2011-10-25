@@ -68,7 +68,10 @@ My therapist once told me that "children have expectations but adults make reque
 
 Again, this applies well to software.
 
-Without good documentation, an interface (even a well-written, secure one) is narcissistic. And I mean ****good**** documentation. That's README's, tutorials, screencasts, and books, in that order. Automated docs are worthless. They don't distinguish important parts of code from unimportant ones. They don't distinguish commonly-used functions from rare cases. They don't give you examples of usage and common mistakes. They just prettify the software implementation that is inherently internal.
+Software has needs. It has requirements and expectations of you, the
+user. But it needs to make those needs extremely clear or it will be
+narcissistic software.
+Without good documentation, an interface (even a well-written, secure one) is narcissistic. And I mean ****good**** documentation. That's README's, tutorials, screencasts, and books, in that order. Automated docs are worthless. They don't distinguish important parts of code from unimportant ones. They don't distinguish commonly-used functions from rare cases. They don't give you examples of usage and common mistakes. They just prettify the software implementation that is inherently internal. You'd be better off reading the source.
 
 Unix man pages are even worse. Very few man pages teach someone how to use a program, they only list the possible options one can give grouped by type. There's no mention of common use cases or gotchas. They feel most like a usage reference for the developer of the program than an actual manual. Man pages are like if someone asked you to describe yourself and you responded by listing everything you'd ever done. "Was born, ate pizza 853 times, have bachelor's in biology, ..." It's useless. To learn about a person (or a piece of software) for the very first time you need the person/software to imagine what you care about (maybe they have to ask) and form an answer that meets your needs succinctly.
 
