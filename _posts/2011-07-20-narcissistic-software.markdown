@@ -23,7 +23,7 @@ diagnose people.
 
 # Narcissistic Software
 
-Narcissism is not gazing longingly at your own visage in the mirror. That may be the origin of the term from a Greek myth but it's used very differently in psychology. A narcissistic person cannot distinguish that their reality is subjective and that other people have experiences distinct from theirs. If someone has ever told you a story where they referenced people and places for which you have no frame of reference then you know what talking to a narcisisst is like. It's frustrating because you must do all the work of figuring out the missing pieces in their story and you also have no chance that your own subjective reality will be understood by the narcissist.
+Narcissism is not gazing longingly at your own visage in the mirror. That may be the origin of the term from a Greek myth but it's used very differently in psychology. A narcissistic person cannot distinguish that their reality is subjective and that other people have experiences distinct from theirs. If someone has ever told you a story where they referenced unknown people and places as if you should know what they're talking about then you know what talking to a narcisisst is like. It's frustrating because you must do all the work of figuring out the missing pieces in their story. And you have no chance to share your own subjective reality with the narcissist.
 
  To get a better feel for Narcissism just imagine a 4-year-old kid jumping into a swimming pool saying "Hey, watch what I can do!" but nobody ever pays attention. Then picture that kid all grown up and still looking for that same "Hey, look at me!" validation of their self and their worldview from everyone they meet. Their constant focus on self and their own inner reality prevents them from growing the psychological muscles necessary to imagine other people's distinct inner selves.
 
@@ -64,7 +64,7 @@ reveal new flexibility and accessibility in your project.
 
 ## Having Expectations Versus Explaining Clearly
 
-My therapist once told me that "children have expectations but adults make requests." This includes adults who have the emotional maturity of children. A child knows it has a need and, if they are at a stage of age-appropriate [narcissism](http://en.wikipedia.org/wiki/Narcissistic_personality_disorder#cite_ref-DSM-IV-TR_0-1), they will expect that other people intuitively understand this need. Part of becoming an adult is shedding this expectation and learning to communicate needs and expectations clearly in terms that other people can comprehend. (Please don't ask my wife how slowly I'm learning this lesson.)
+My therapist once told me that "children have expectations but adults make requests." A child knows it has a need and, if they are at a stage of age-appropriate [narcissism](http://en.wikipedia.org/wiki/Narcissistic_personality_disorder#cite_ref-DSM-IV-TR_0-1), they will expect that other people intuitively understand this need. When we adults hold unspoken expectations rather than making verbal requests we act out of a leftover childhood narcissism. Part of our growth is to shed this expectation and learn to communicate our needs in ways other people can comprehend.
 
 Again, this applies well to software.
 
