@@ -39,8 +39,9 @@ EOS
   system "mvim #{post}"
 end
 
-desc "Push to Heroku | http://jackdanger.heroku.com"
-task :deploy do
+desc "Rebuild and push to Heroku | http://jackdanger.heroku.com"
+task :deploy => :default do
+  `git commit -am "rebuilding"`
   `git push heroku master`
 end
 
