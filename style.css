@@ -44,15 +44,22 @@ a#square {
 /* Headers */
 h1,h2,h3,h4,h5,h6 {
   color: #966;
-  padding: 0 5px;
+  padding: 0;
   background-color: #FAFAFA;
   border-top:    1px solid #EEE;
   border-bottom: 1px solid #EEE;
 }
 
 /* Essays */
-div#post p {
+div#post p,
+div#post fieldset,
+div#post ul,
+div#post blockquote {
   font-size: 15pt;
+  line-height: 22pt;
+}
+fieldset {
+  border: 1px dotted #999;
 }
 blockquote {
   color: #666;

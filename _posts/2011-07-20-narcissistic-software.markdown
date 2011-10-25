@@ -9,8 +9,6 @@ author_url: http//jackcanty.com
 
 # Software Psychology: Narcissism
 
-My wife is a therapist and I'm an engineer. Eventually, the topic of how psychology and software intersect had to come up.
-
 Software is like people. It has an inside (where it makes decisions
 about what to do) and an outside (where it tries to work and play well with others). We call the outside of software the
 "interface". We just call the outside of a person "the face".
@@ -18,12 +16,14 @@ about what to do) and an outside (where it tries to work and play well with othe
 So let's diagnose software problems using the tools we've built to
 diagnose people.
 
-> <h5>Narcissistic Personality Disorder</h5>
-> A narcissist lacks empathy; is unwilling to recognize or identify with the feelings and needs of others.
+<fieldset>
+  <legend>Narcissistic Personality Disorder</legend>
+  A narcissist lacks empathy; is unwilling to recognize or identify with the feelings and needs of others.
+</fieldset>
 
 # Narcissistic Software
 
-Narcissism is not gazing longing at your own visage in the mirror. That may be the origin of the term from a Greek myth but it's used very differently in psychology. A narcissistic person cannot distinguish that their reality is subjective and that other people have experiences distinct from theirs. If someone has ever told you a story where they referenced people and places for which you have no frame of reference then you know what talking to a narcisisst is like. It's frustrating because you must do all the work of figuring out the missing pieces in their story and you also have no chance that your own subjective reality will be understood by the narcissist.
+Narcissism is not gazing longingly at your own visage in the mirror. That may be the origin of the term from a Greek myth but it's used very differently in psychology. A narcissistic person cannot distinguish that their reality is subjective and that other people have experiences distinct from theirs. If someone has ever told you a story where they referenced people and places for which you have no frame of reference then you know what talking to a narcisisst is like. It's frustrating because you must do all the work of figuring out the missing pieces in their story and you also have no chance that your own subjective reality will be understood by the narcissist.
 
  To get a better feel for Narcissism just imagine a 4-year-old kid jumping into a swimming pool saying "Hey, watch what I can do!" but nobody ever pays attention. Then picture that kid all grown up and still looking for that same "Hey, look at me!" validation of their self and their worldview from everyone they meet. Their constant focus on self and their own inner reality prevents them from growing the psychological muscles necessary to imagine other people's distinct inner selves.
 
