@@ -53,9 +53,12 @@ h1,h2,h3,h4,h5,h6 {
 /* Essays */
 div#post p,
 div#post fieldset,
-div#post ul,
 div#post blockquote {
   font-size: 15pt;
+  line-height: 22pt;
+}
+div#post ul {
+  font-size: 13pt;
   line-height: 22pt;
 }
 fieldset {
