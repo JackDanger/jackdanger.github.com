@@ -39,6 +39,11 @@ EOS
   system "mvim #{post}"
 end
 
+desc "Push to Heroku | http://jackdanger.heroku.com"
+task :deploy do
+  `git push heroku master`
+end
+
 def entries
   Dir.glob("./_posts/*")
 end

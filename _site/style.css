@@ -54,6 +54,10 @@ h1,h2,h3,h4,h5,h6 {
 div#post p {
   font-size: 15pt;
 }
+blockquote {
+  color: #666;
+  font-style: italic;
+}
 /* Home Page */
 ul.writing {
   padding: 0;

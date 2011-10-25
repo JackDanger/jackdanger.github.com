@@ -1,0 +1,155 @@
+<html>
+  <head>
+    <title>Jack Danger &middot; Narcissistic Software</title>
+    <meta name="author" content="Jack Danger Canty" />
+    <link rel="openid.server" href="http://www.myopenid.com/server/">
+    <link rel="openid.delegate" href="http://jackdanger.myopenid.com/"> 
+    <link href="/grid.css" rel="stylesheet" type="text/css">
+    <link href="/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://use.typekit.com/jdn6stu.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="header" class="row">
+      <div id="avatar" class="column grid_2">
+        <a href="http://jackcanty.com/">
+          <img
+          src="http://en.gravatar.com/userimage/3804050/088b0fb915c49db0883bff906648b984.jpg?size=120" />
+        </a>
+      </div>
+      <div id="whereami" class="column grid_3">
+        <strong>
+          <a href="http://jackcanty.com/" id="full_name">Jack Danger Canty</a>
+        </strong>
+        <br />
+        <img class="icon" src="https://s2.googleusercontent.com/s2/favicons?alt=p&domain=twitter.com" />
+        <div class='sitelink'>
+          <a href="https://twitter.com/jackdanger" class="sitelink">Twitter/JackDanger</a>
+        </div>
+        <img class="icon" src="https://github.com/favicon.ico" />
+        <div class='sitelink'>
+          <a href="https://github.com/jackdanger" class="sitelink">GitHub/JackDanger</a>
+        </div>
+        <img class="icon" src="https://plus.google.com/favicon.ico" />
+        <div class='sitelink'>
+          <a href="https://plus.google.com/107513155514627977900/posts" class="sitelink">G+/JackDanger</a>
+        </div>
+      </div>
+      <div id="squareup" class="column grid_3">
+        Currently Building:
+        <img class="inline-icon" src="https://squareup.com/favicon.ico" />
+        <a href="https://squareup.com" id="square">Square</a>
+      </div>
+    </div>
+
+    <div class="row">
+  <div id="post" class="column grid_9">
+    <h1 id='software_psychology_narcissism'>Software Psychology: Narcissism</h1>
+
+<p>My wife is a therapist and I&#8217;m an engineer. Eventually, the topic of how psychology and software intersect had to come up.</p>
+
+<p>Software is like people. It has an inside (where it makes decisions about what to do) and an outside (where it tries to work and play well with others). We call the outside of software the &#8220;interface&#8221;. We just call the outside of a person &#8220;the face&#8221;.</p>
+
+<p>So let&#8217;s diagnose software problems using the tools we&#8217;ve built to diagnose people.</p>
+
+<blockquote>
+<p>Narcissistic Personality Disorder<br /> A narcissist lacks empathy; is unwilling to recognize or identify with the feelings and needs of others.</p>
+</blockquote>
+
+<h1 id='narcissistic_software'>Narcissistic Software</h1>
+
+<p>Narcissism is not gazing longing at your own visage in the mirror. That may be the origin of the term from a Greek myth but it&#8217;s used very differently in psychology. A narcissistic person cannot distinguish that their reality is subjective and that other people have experiences distinct from theirs. If someone has ever told you a story where they referenced people and places for which you have no frame of reference then you know what talking to a narcisisst is like. It&#8217;s frustrating because you must do all the work of figuring out the missing pieces in their story and you also have no chance that your own subjective reality will be understood by the narcissist.</p>
+
+<p>To get a better feel for Narcissism just imagine a 4-year-old kid jumping into a swimming pool saying &#8220;Hey, watch what I can do!&#8221; but nobody ever pays attention. Then picture that kid all grown up and still looking for that same &#8220;Hey, look at me!&#8221; validation of their self and their worldview from everyone they meet. Their constant focus on self and their own inner reality prevents them from growing the psychological muscles necessary to imagine other people&#8217;s distinct inner selves.</p>
+
+<p>With me so far? Okay, let&#8217;s switch gears and apply that human model to software interfaces.</p>
+
+<p>Narcissistic software doesn&#8217;t sanely relate to other software. It doesn&#8217;t know the difference between its inside and its outside. It doesn&#8217;t have a grasp of how other services, clients, libraries and people experience it from the outside. More specifically: The software author did not give sufficient thought to how it will be used.</p>
+
+<h2 id='software_extraction_lifecycle'>Software Extraction Lifecycle</h2>
+
+<p>Most code will, if indefinitely maintained, go through an extraction lifecycle that looks like this:</p>
+
+<ul>
+<li>Code begins life as a script for a specific task</li>
+
+<li>Code is organized properly into objects, functions, or whatever paradigm the language uses for naming behavior (also, tests are nice)</li>
+
+<li>Code is separated into multiple, well-named files</li>
+
+<li>Code is extracted into its own project where it can be loaded with a single command</li>
+
+<li>Code is documented</li>
+
+<li>Client libraries are written for specific anticipated clients</li>
+
+<li>Clients are documented</li>
+</ul>
+
+<p>In the early stages the software is totally narcissistic. It can barely get its own job done so it doesn&#8217;t waste time thinking about the experience that others have of it. Any user will have to read the source to work with the software. But as it matures through the lifecycle it grows in usability and starts to express itself more clearly. The documentation and client libraries are the final step in anticipating the user&#8217;s needs and meeting them.</p>
+
+<p>If the code we write is good and useful then it should be maintained. If it&#8217;s maintained then it should eventually reach the point where it becomes relationally healthy and sheds its narcissism. If you have code that performs some important task but that has stopped maturing in these ways then I&#8217;d strongly encourage you to consider why. Is it actually that important? If so, helping it along the extraction lifecycle will reveal new flexibility and accessibility in your project.</p>
+
+<h2 id='having_expectations_versus_explaining_clearly'>Having Expectations Versus Explaining Clearly</h2>
+
+<p>My therapist once told me that &#8220;children have expectations but adults make requests.&#8221; This includes adults who have the emotional maturity of children. A child knows it has a need and, if they are at a stage of age-appropriate <a href='http://en.wikipedia.org/wiki/Narcissistic_personality_disorder#cite_ref-DSM-IV-TR_0-1'>narcissism</a>, they will expect that other people intuitively understand this need. Part of becoming an adult is shedding this expectation and learning to communicate needs and expectations clearly in terms that other people can comprehend. (Please don&#8217;t ask my wife how slowly I&#8217;m learning this lesson.)</p>
+
+<p>Again, this applies well to software.</p>
+
+<p>Without good documentation, an interface (even a well-written, secure one) is narcissistic. And I mean <em>good</em> documentation. That&#8217;s README&#8217;s, tutorials, screencasts, and books, in that order. Automated docs are worthless. They don&#8217;t distinguish important parts of code from unimportant ones. They don&#8217;t distinguish commonly-used functions from rare cases. They don&#8217;t give you examples of usage and common mistakes. They just prettify the software implementation that is inherently internal.</p>
+
+<p>Unix man pages are even worse. Very few man pages teach someone how to use a program, they only list the possible options one can give grouped by type. There&#8217;s no mention of common use cases or gotchas. They feel most like a usage reference for the developer of the program than an actual manual. Man pages are like if someone asked you to describe yourself and you responded by listing everything you&#8217;d ever done. &#8220;Was born, ate pizza 853 times, have bachelor&#8217;s in biology, &#8230;&#8221; It&#8217;s useless. To learn about a person (or a piece of software) for the very first time you need the person/software to imagine what you care about (maybe they have to ask) and form an answer that meets your needs succinctly.</p>
+
+<blockquote>
+<p>If you disagree with me about man pages being awful, I dare you to adjust your hard drive with the <code>dd</code> command using only the man page for help.</p>
+</blockquote>
+
+<p>To avoid narcissism in your software, write it with a good understanding of anticipated usage by people who are not you. If the software you&#8217;re writing is worth using then it&#8217;s worth giving it a sane interface. It should have clear, human-written documentation about how it should be used based on your best guesses of how it will actually be used.</p>
+
+<h2 id='why_i_care_and_why_you_should_too'>Why I Care, And Why You Should Too</h2>
+
+<p>The internet is not a network of computers, it&#8217;s a festival of relational applications. Our code only gets invited to the party if we teach it to relate well to it&#8217;s peers. You and I, as engineers, have much to offer &amp;mdash but only if we realize that our friends want and need to use our code.</p>
+  </div>
+
+  <div id="comments" class="column grid_9">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'jackcanty'
+        var disqus_identifier = ''
+        var disqus_url = window.location.href
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+
+  <div id="related" class="column grid_9">
+    <h2>Related Posts</h2>
+    <ul class="posts">
+      
+    </ul>
+  </div>
+</div>
+
+    
+    <div id='youtube'>
+      <a href="http://www.youtube.com/watch?v=ueaHLHgskkw">yes, yes it is.</a>
+    </div>
+    
+  </body>
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker("UA-331450-11");
+    pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
+</html>

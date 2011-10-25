@@ -2,54 +2,71 @@
 layout: post
 title: Narcissistic Software
 permalink: write/narcissistic-software.html
-published: false
+published: true
 author: Jack Danger Canty
 author_url: http//jackcanty.com
 ---
 
-All software has an inside and an outside. The inside is where the software makes decisions about what it's supposed to do. The outside is what we call the "interface" and it's how you interact with the software &mdash; whether "you" is a person sitting at a keyboard or another piece of software. For the rest of this document I'll be using "interface" to describe all kinds of software outsides whether they're web pages, service APIs, internal APIs, etc.
+# Software Psychology: Narcissism
 
-If software connects to something outside itself then software is at least a little bit like people. If it relates then it can suffer from relational disorders. An interface can be unreliable, it can be slow, it can be too verbose, etc. I'm going to model a specific type of software interface disorder and use a human psychological model for it.
+My wife is a therapist and I'm an engineer. Eventually, the topic of how psychology and software intersect had to come up.
 
-> Narcissistic Personality Disorder
+Software is like people. It has an inside (where it makes decisions
+about what to do) and an outside (where it tries to work and play well with others). We call the outside of software the
+"interface". We just call the outside of a person "the face".
+
+So let's diagnose software problems using the tools we've built to
+diagnose people.
+
+> <h5>Narcissistic Personality Disorder</h5>
 > A narcissist lacks empathy; is unwilling to recognize or identify with the feelings and needs of others.
 
 # Narcissistic Software
 
-The other day a sweet, blue-haired old lady was sharing her stories with me. "And my cousin Veronica, y'know, she had that condition for years. And her son, Bryan, after that horrible accident, was just never the same". Now, I love this particular elderly lady but I've never heard of Veronica or her son before. And I don't know what condition Veronica suffered, nor what Bryan was like before (or after) this mysterious accident.
+Narcissism is not gazing longing at your own visage in the mirror. That may be the origin of the term from a Greek myth but it's used very differently in psychology. A narcissistic person cannot distinguish that their reality is subjective and that other people have experiences distinct from theirs. If someone has ever told you a story where they referenced people and places for which you have no frame of reference then you know what talking to a narcisisst is like. It's frustrating because you must do all the work of figuring out the missing pieces in their story and you also have no chance that your own subjective reality will be understood by the narcissist.
 
-This lady, sweetheart though she is, was demonstrating narcissism as she told the story. Narcissism, in the technical sense, is a failure to distinguish that one's reality is subjective and that other people have experiences distinct from yours even in the same culture, company, and family.
-She had an internal understanding of the world that included her memories, her relationships, and her judgements and she (temporarily) forgot that my experience of the world is different from hers. I don't know those people in the story. I know other people that she doesn't know. If we're to have a conversation we have to talk about people we both know. Or one of us can tell a story that introduces a new character but we have to give extra information so that we both know enough for the story to make sense.
+ To get a better feel for Narcissism just imagine a 4-year-old kid jumping into a swimming pool saying "Hey, watch what I can do!" but nobody ever pays attention. Then picture that kid all grown up and still looking for that same "Hey, look at me!" validation of their self and their worldview from everyone they meet. Their constant focus on self and their own inner reality prevents them from growing the psychological muscles necessary to imagine other people's distinct inner selves.
 
-Narcissism is not gazing longing at your own visage in the mirror. That may be the origin of the term from a Greek myth but it's used very differently in modern psychology. To get a better feel for Narcissism just imagine a 4-year-old kid jumping into a swimming pool saying "Hey, watch what I can do!" but nobody ever pays attention. Then picture that kid all grown up and still looking for that same "Hey, look at me!" validation of their self and their worldview from everyone they meet. Their constant focus on self and their own inner reality prevents them from growing the psychological muscles necessary to imagine other people's distinct inner selves.
-
-Interesting note: Narcissistic Personality Disorder is very common in America but psychologists in other cultures frequently report never having encountered a single case. Other cultures often generate totally different disorders.
-
-Okay, let's switch gears and apply that human model to software interfaces.
+With me so far? Okay, let's switch gears and apply that human model to software interfaces.
 
 Narcissistic software doesn't sanely relate to other software. It doesn't know the difference between its inside and its outside. It doesn't have a grasp of how other services, clients, libraries and people experience it from the outside. More specifically: The software author did not give sufficient thought to how it will be used.
- 
-## Exposing internals inappropriately (tightly coupled services)
 
-One way for an interface to be narcissistic is for it to expose it's internal workings in an unhelpful or even dangerous way.
+## Software Extraction Lifecycle
 
-See if you can find a problem with this (contrived) narcissistic interface:
+Most code will, if indefinitely maintained, go through an extraction
+lifecycle that looks like this:
 
-    http://example.com/run?sql="select * from users;"
+* Code begins life as a script for a specific task
+* Code is organized properly into objects, functions, or whatever
+  paradigm the language uses for naming behavior (also, tests are nice)
+* Code is separated into multiple, well-named files
+* Code is extracted into its own project where it can be loaded with a
+  single command
+* Code is documented
+* Client libraries are written for specific anticipated clients
+* Clients are documented
 
-Okay, so problem #1 is that some joker at a computer will edit this url to read sql="drop table users;" and destroy the data. But that security problem is really just indicative of the larger issue that the inside and outside of this app have been confused with each other.
+In the early stages the software is totally narcissistic. It can barely
+get its own job done so it doesn't waste time thinking about the
+experience that others have of it. Any user will have to read the source
+to work with the software. But as it matures through the
+lifecycle it grows in usability and starts to express itself more
+clearly. The documentation and client libraries are the final step in
+anticipating the user's needs and meeting them.
 
-This user-listing service assumes that, because it uses SQL internally, SQL is an appropriate language for the outside world as well. But what works inside this application is a poor fit for outside. If this application were capable of understanding how it would be used it would look like this:
-
-    http://example.com/list_users
-
-This would lighten the burden of anything using this interface and would prevent wholesale slaughter of data.
+If the code we write is good and useful then it should be maintained. If
+it's maintained then it should eventually reach the point where it
+becomes relationally healthy and sheds its narcissism. If you have code
+that performs some important task but that has stopped maturing in these
+ways then I'd strongly encourage you to consider why. Is it actually
+that important? If so, helping it along the extraction lifecycle will
+reveal new flexibility and accessibility in your project.
 
 ## Having Expectations Versus Explaining Clearly
 
-My therapist once told me that "children have expectations but adults make requests." This includes adults who have the emotional maturity of children. A child knows it has a need and, if they are at a stage of age-appropriate [narcissism](http://en.wikipedia.org/wiki/Narcissistic_personality_disorder#cite_ref-DSM-IV-TR_0-1), they will expect that other people intuitively understand this need. Part of becoming an adult is shedding this expectation and learning to communicate needs and expectations clearly in terms that other people can comprehend. Please don't ask my wife how slowly I'm learning this lesson.
+My therapist once told me that "children have expectations but adults make requests." This includes adults who have the emotional maturity of children. A child knows it has a need and, if they are at a stage of age-appropriate [narcissism](http://en.wikipedia.org/wiki/Narcissistic_personality_disorder#cite_ref-DSM-IV-TR_0-1), they will expect that other people intuitively understand this need. Part of becoming an adult is shedding this expectation and learning to communicate needs and expectations clearly in terms that other people can comprehend. (Please don't ask my wife how slowly I'm learning this lesson.)
 
-Again, this applies well to software. I don't even have to contrive an example for this because it's so common.
+Again, this applies well to software.
 
 Without good documentation, an interface (even a well-written, secure one) is narcissistic. And I mean _good_ documentation. That's README's, tutorials, screencasts, and books, in that order. Automated docs are worthless. They don't distinguish important parts of code from unimportant ones. They don't distinguish commonly-used functions from rare cases. They don't give you examples of usage and common mistakes. They just prettify the software implementation that is inherently internal.
 
@@ -57,7 +74,9 @@ Unix man pages are even worse. Very few man pages teach someone how to use a pro
 
 > If you disagree with me about man pages being awful, I dare you to adjust your hard drive with the `dd` command using only the man page for help.
 
-A narcissist knows if they like something but they're unable and unwilling to figure out if you like it to. They can tell what they're interested in but don't know if you feel the same. To avoid narcissism in your software, write it with a good understanding of expected usage.
+To avoid narcissism in your software, write it with a good understanding of anticipated usage by people who are not you. If the software you're writing is worth using then it's worth giving it a sane interface. It should have clear, human-written documentation about how it should be used based on your best guesses of how it will actually be used.
 
-If the software you're writing is worth using then it's worth giving it a sane interface. The externally-accessible parts shouldn't be tied to it's internal structure and it should have clear, human-written documentation about how it should be used based on your best guesses of how it will actually be used. The internet is not a network of computers, it's a festival of relational applications. Our code only gets invited to the party if we teach it to relate well to it's peers.
+## Why I Care, And Why You Should Too
+
+The internet is not a network of computers, it's a festival of relational applications. Our code only gets invited to the party if we teach it to relate well to it's peers. You and I, as engineers, have much to offer &mdash but only if we realize that our friends want and need to use our code.
 
