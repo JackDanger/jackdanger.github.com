@@ -81,4 +81,4 @@ To avoid narcissism in your software, write it with a good understanding of anti
 
 ## Why I Care, And Why You Should Too
 
-The internet is not a network of computers, it's a festival of relational applications. Our code only gets invited to the party if we teach it to relate well to it's peers. You and I, as engineers, have much to offer &mdash; but only if we remember that other people need to use our code.
+The internet is not a network of computers, it's a festival of relational applications. Our code only gets invited to the party if we teach it to relate well to its peers. You and I, as engineers, have much to offer &mdash; but only if we remember that other people need to use our code.
