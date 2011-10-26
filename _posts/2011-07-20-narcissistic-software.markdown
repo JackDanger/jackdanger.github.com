@@ -10,8 +10,8 @@ author_url: http//jackcanty.com
 # Software Psychology: Narcissism
 
 Software is like people. It has an inside (where it makes decisions
-about what to do) and an outside (where it tries to work and play well with others). We call the outside of software the
-"interface". We just call the outside of a person "the face".
+about what to do) and an outside (where it tries to work and play well with others). We call the outside of software "the
+interface". We just call the outside of a person "the face".
 
 So let's diagnose software problems using the tools we've built to
 diagnose people.
