@@ -114,7 +114,7 @@ ul#repos li a {
   color: #333;
 }
 #youtube {
-  position: absolute;
+  position: fixed;
   right: 1em;
   bottom: 3em;
   font-size: 0.8em;
